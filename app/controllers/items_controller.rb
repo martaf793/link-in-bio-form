@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
 
   def form
     render({ :template => "item_templates/form" })
-    # redirect_to({"/HTTP_303"})
+    # redirect_to({"/HTTP_303"}) NOT HERE, NO 303
   end
   def new
     i=Item.new
@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
     i.link_description=params.fetch("url_description")
     i.thumbnail_url=params.fetch("thumbnail_url_link")
     i.save
-    render({ :template => "item_templates/new" })
-    # redirect_to({"/HTTP_303"})
+    redirect_to("/")
   end
 end
