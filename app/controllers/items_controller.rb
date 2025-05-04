@@ -18,7 +18,9 @@ class ItemsController < ApplicationController
     redirect_to("/")
   end
   def delete
-      Item.destroy_all
+      matching_items=Item.where({:id=>params.fetch("id")})
+      the_item=matching_items.at(0)
+      the_item.destroy
       redirect_to("/")
   end
 
