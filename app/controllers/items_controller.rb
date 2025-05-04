@@ -17,4 +17,9 @@ class ItemsController < ApplicationController
     i.save
     redirect_to("/")
   end
+  def delete
+      Item.destroy_all
+      redirect_to("/")
+  end
+
 end
